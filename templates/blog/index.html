@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Django Blog - Home
+{% endblock title %}
+
+{% block content %}
+<div class="banner-home d-flex justify-content-center align-items-center">
+    <div class="center">
+      <h1>Django Blog</h1>
+      <p>A personal blog created using django framework</p>
+    </div>
+  </div>
+
+  <div class="banner center container">
+  <h4 class="banner-title">Latest posts</h4>
+
+    <!-- Card -->
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4 card-image" style="background-image: url('#');"></div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <a href="#">
+              <h5 class="card-title">Title</h5>
+            </a>
+            <p class="card-text">Details</p>
+            <p class="card-text"><small class="text-muted">Text</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}
+    

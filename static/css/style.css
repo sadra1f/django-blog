@@ -1,4 +1,96 @@
-html,
-body {
+html {
     scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 3em;
+    background: #2e2e2e;
+    color: #ffffff;
+}
+
+a {
+    transition: 160ms;
+}
+
+.center {
+    text-align: center;
+}
+
+.navbar {
+    background: #1e1e1e;
+}
+
+.navbar.hide,
+.navbar.show {
+    transition: 200ms;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #c7c7c7;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 300ms;
+}
+
+.nav-link:hover::after {
+    width: 76%;
+}
+
+.banner {
+    padding: 32px 0;
+}
+
+.banner-home {
+    background: #1e1e1e;
+    height: 400px;
+}
+
+.banner-title {
+    margin-bottom: 64px;
+}
+
+.card {
+    margin: 16px 0;
+    background-color: #1e1e1e;
+}
+
+.card .card-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer {
+    background: #1e1e1e;
+    color: #4e4e4e;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 992px) {
+    .nav-link:hover::after {
+        width: 0;
+    }
 }
