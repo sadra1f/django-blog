@@ -16,6 +16,10 @@ a {
     text-align: center;
 }
 
+.left {
+    text-align: left;
+}
+
 .navbar {
     background: #1e1e1e;
 }
@@ -55,6 +59,10 @@ a {
     width: 76%;
 }
 
+.page-body {
+    min-height: 90vh;
+}
+
 .banner {
     padding: 32px 0;
 }
@@ -73,10 +81,18 @@ a {
     background-color: #1e1e1e;
 }
 
+.image-card {
+    height: 400px;
+}
+
 .card .card-image {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.image-card .card-image {
+    border: 4px solid #1e1e1e;
 }
 
 .footer {

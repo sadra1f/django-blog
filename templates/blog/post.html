@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Django Blog - Post
+{% endblock title %}
+
+{% block content %}
+<div class="page-body">
+    <div class="container">
+      <!-- Card -->
+      <div class="card mb-3">
+        <div class="row no-gutters image-card">
+          <div class="col-12 card-image" style="background-image: url('#');"></div>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-12">
+            <div class="card-body center">
+              <a href="#">
+                <h5 class="card-title">Title</h5>
+              </a>
+              <p class="card-text"><small class="text-muted">Time</small></p>
+              <p class="card-text left">Text</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}
+    
