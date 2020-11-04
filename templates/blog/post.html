@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    Django Blog - Post
+  {{ post.title }}
 {% endblock title %}
 
 {% block content %}
@@ -11,7 +11,7 @@
       <!-- Card -->
       <div class="card mb-3">
         <div class="row no-gutters image-card">
-          <div class="col-12 card-image" style="background-image: url('#');"></div>
+          <div class="col-12 card-image" style="background-image: url('{{ post.image.url }}');"></div>
         </div>
       </div>
 
@@ -19,11 +19,9 @@
         <div class="row no-gutters">
           <div class="col-md-12">
             <div class="card-body center">
-              <a href="#">
-                <h5 class="card-title">Title</h5>
-              </a>
-              <p class="card-text"><small class="text-muted">Time</small></p>
-              <p class="card-text left">Text</p>
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
+              <p class="card-text left">{{ post.content }}</p>
             </div>
           </div>
         </div>
