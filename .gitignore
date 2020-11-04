@@ -131,3 +131,11 @@ dmypy.json
 # Visual Studio Code
 .vscode
 *.code-workspace
+
+# Django Media
+/media
+
+# Only for Development only
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
