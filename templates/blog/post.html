@@ -8,7 +8,6 @@
 {% block content %}
 <div class="page-body">
     <div class="container">
-      <!-- Card -->
       <div class="card mb-3">
         <div class="row no-gutters image-card">
           <div class="col-12 card-image" style="background-image: url('{{ post.image.url }}');"></div>
@@ -26,6 +25,40 @@
           </div>
         </div>
       </div>
+
+      <div class="card mb-3">
+        <div class="no-gutters comment-form-card">
+          {% if new_comment %}
+            <h5 class="center">Your comment is awaiting moderation</h5>
+          {% else %}
+            <h5 class="center">Leave a comment</h5>
+            <br>
+            <form method="POST">
+              {{ comment_form.as_p }}
+              {% csrf_token %}
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if comments|length > 0 %}
+        <div class="card mb-3">
+          <div class="row no-gutters comments-card">
+            {% for comment in comments %}
+              <div style="width: 100%;">
+                {% if forloop.first is not True %}
+                  <hr>
+                {% endif %}
+                <div>
+                  <h5>{{ comment.name }} <small class="text-muted"> - {{ comment.created_on }}</small></h5>
+                  <p>{{ comment.content }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
     </div>
 </div>
 {% endblock content %}
