@@ -1,0 +1,17 @@
+<div class="pagination d-inline-block">
+  <span>
+    {% if page.has_previous %}
+      <a href="?page={{ page.previous_page_number }}" class="mx-3">&#x0003C; Previous</a>
+    {% else %}
+      <a class="mx-3 text-muted">&#x0003C; Previous</a>
+    {% endif %}
+  <span>
+    Page {{ page.number }} of {{ page.paginator.num_pages }}
+  </span>
+    {% if page.has_next %}
+      <a href="?page={{ page.next_page_number }}" class="mx-3">Next &#x0003E;</a>
+    {% else %}
+      <a class="mx-3 text-muted">Next &#x0003E;</a>
+    {% endif %}
+  </span>
+</div>

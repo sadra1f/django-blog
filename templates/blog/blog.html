@@ -7,28 +7,30 @@
 
 {% block content %}
 <div class="page-body">
-    <div class="container center">
-      {% if posts|length > 0 %}
-        {% for post in posts %}
-        <div class="card mb-3">
-          <div class="row no-gutters">
-            <div class="col-md-4 card-image" style="background-image: url('{{ post.image.url }}');"></div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <a href="{% url 'post' post.slug %}">
-                  <h5 class="card-title">{{ post.title }}</h5>
-                </a>
-                <p class="card-text">{{ post.content|truncatewords:50 }}</p>
-                <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
-              </div>
+  <div class="container center">
+    {% if posts|length > 0 %}
+      {% for post in posts %}
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4 card-image" style="background-image: url('{{ post.image.url }}');"></div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <a href="{% url 'post' post.slug %}">
+                <h5 class="card-title">{{ post.title }}</h5>
+              </a>
+              <p class="card-text">{{ post.content|truncatewords:50 }}</p>
+              <p class="card-text"><small class="text-muted">{{ post.created_on }}</small></p>
             </div>
           </div>
         </div>
-        {% endfor %}
-      {% else %}
-        <h1 style="padding-top: 120px;">Tere are no posts in here yet</h1>
-      {% endif %}
+      </div>
+      {% endfor %}
+    {% else %}
+      <h1 style="padding-top: 120px;">Tere are no posts in here yet</h1>
+    {% endif %}
+    <div class="my-4 center">
+      {% include 'pagination.html' with page=posts %}
     </div>
+  </div>
 </div>
 {% endblock content %}
-    
